@@ -12,6 +12,10 @@ function enforceDarkMode() {
   document.body.classList.add("dark-mode-allowed");
   document.body.dataset.theme = "dark";
 
+  if (window.themeStore) {
+    window.themeStore.theme = "dark";
+  }
+
   // Re-render all aha-cards to blend w/ dark mode
   document.querySelectorAll("aha-card").forEach((card) => {
     // Hack to re-render aha-card
