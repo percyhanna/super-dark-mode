@@ -1,14 +1,11 @@
-// aha.on("enforceDarkMode", ({ record }, { identifier, settings }) => {
-//   if (record) {
-//     aha.commandOutput(
-//       `Running sample command for record: ${record.typename} / ${record.referenceNum}.`
-//     );
-//   } else {
-//     aha.commandOutput(`Running sample command without a record.`);
-//   }
-// });
+const DenyList = new RegExp("/settings/graphql_explorer");
 
 function enforceDarkMode() {
+  // Block certain URLs
+  if (DenyList.test(location.pathname)) {
+    return;
+  }
+
   document.body.classList.add("dark-mode-allowed");
   document.body.dataset.theme = "dark";
 
