@@ -98,7 +98,7 @@ function saveMode(isDark) {
 
 // Load the saved mode from local storage
 function loadMode() {
-  return localStorage.getItem("ahaDarkMode") === "true";
+  return localStorage.getItem("ahaDarkMode") !== "false";
 }
 
 // Create and add the toggle to the navbar
@@ -223,7 +223,7 @@ if (window.iripo) {
 }
 
 addEventListener("storage", (event) => {
-  if (event.key === "ahaDarkMode") {
+  if (event.key === "ahaDarkMode" && event.newValue) {
     initDarkMode();
   }
 });
