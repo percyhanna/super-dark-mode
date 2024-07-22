@@ -221,3 +221,9 @@ initDarkMode();
 if (window.iripo) {
   window.iripo.in("ul.top-nav__secondary", initDarkMode);
 }
+
+addEventListener("storage", (event) => {
+  if (event.key === "ahaDarkMode") {
+    initDarkMode();
+  }
+});
