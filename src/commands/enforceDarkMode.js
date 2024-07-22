@@ -218,19 +218,6 @@ function toggleDarkMode() {
 // Run initialization
 initDarkMode();
 
-// Use MutationObserver to detect DOM changes
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.type === 'childList') {
-      initDarkMode();
-    }
-  });
-});
-
-// Start observing the document with the configured parameters
-observer.observe(document.body, { childList: true, subtree: true });
-
-// Clean up the observer when the page is unloaded
-window.addEventListener('unload', () => {
-  observer.disconnect();
-});
+if (window.iripo) {
+  window.iripo.in("ul.top-nav__secondary", initDarkMode);
+}
