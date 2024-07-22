@@ -93,31 +93,31 @@ const styles = `
 
 // Save the current mode to local storage
 function saveMode(isDark) {
-  localStorage.setItem('ahaDarkMode', isDark);
+  localStorage.setItem("ahaDarkMode", isDark);
 }
 
 // Load the saved mode from local storage
 function loadMode() {
-  return localStorage.getItem('ahaDarkMode') === 'true';
+  return localStorage.getItem("ahaDarkMode") === "true";
 }
 
 // Create and add the toggle to the navbar
 function addDarkModeToggle() {
   // Check if the toggle already exists
-  if (document.getElementById('dark-mode-toggle')) {
-    return document.getElementById('dark-mode-toggle');
+  if (document.getElementById("dark-mode-toggle")) {
+    return document.getElementById("dark-mode-toggle");
   }
 
-  const navbar = document.querySelector('ul.top-nav__secondary');
+  const navbar = document.querySelector("ul.top-nav__secondary");
   if (!navbar) return null;
 
-  const toggleLi = document.createElement('li');
-  toggleLi.className = 'top-nav__item dark-mode-toggle-wrapper';
+  const toggleLi = document.createElement("li");
+  toggleLi.className = "top-nav__item dark-mode-toggle-wrapper";
 
-  const toggle = document.createElement('button');
-  toggle.id = 'dark-mode-toggle';
-  toggle.className = 'dark-mode-toggle';
-  toggle.setAttribute('aria-label', 'Toggle dark mode');
+  const toggle = document.createElement("button");
+  toggle.id = "dark-mode-toggle";
+  toggle.className = "dark-mode-toggle";
+  toggle.setAttribute("aria-label", "Toggle dark mode");
   toggle.innerHTML = `
     <div class="toggle-handle">
       <svg class="toggle-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFD700" stroke="#FF8C00" stroke-width="2">
@@ -145,9 +145,9 @@ function addDarkModeToggle() {
 
 // Add CSS styles only once
 function addStyles() {
-  if (!document.getElementById('dark-mode-toggle-styles')) {
-    const styleElement = document.createElement('style');
-    styleElement.id = 'dark-mode-toggle-styles';
+  if (!document.getElementById("dark-mode-toggle-styles")) {
+    const styleElement = document.createElement("style");
+    styleElement.id = "dark-mode-toggle-styles";
     styleElement.textContent = styles;
     document.head.appendChild(styleElement);
   }
@@ -155,13 +155,13 @@ function addStyles() {
 
 // Update the toggle appearance
 function updateToggle(isDark) {
-  const toggle = document.getElementById('dark-mode-toggle');
+  const toggle = document.getElementById("dark-mode-toggle");
   if (!toggle) return;
 
   if (isDark) {
-    toggle.classList.add('dark');
+    toggle.classList.add("dark");
   } else {
-    toggle.classList.remove('dark');
+    toggle.classList.remove("dark");
   }
 }
 
@@ -205,8 +205,8 @@ function initDarkMode() {
   enforceDarkMode(isDark);
 
   // Remove any existing event listeners before adding a new one
-  toggle.removeEventListener('click', toggleDarkMode);
-  toggle.addEventListener('click', toggleDarkMode);
+  toggle.removeEventListener("click", toggleDarkMode);
+  toggle.addEventListener("click", toggleDarkMode);
 }
 
 // Toggle dark mode
