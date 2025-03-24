@@ -17,7 +17,7 @@ TODO: Add a short .gif screen recording showing some of the highlights of your e
 
 **Note: In order to install an extension into your Aha! Develop account, you must be an account administrator.**
 
-Install the Super Dark Mode extension by clicking [here](https://secure.aha.io/settings/account/extensions/install?url=https%3A%2F%2Fgithub.com%2Fpercyhanna%2Fsuper-dark-mode%2Freleases%2Fdownload%2Fv0.0.2%2Fpercyhanna.super-dark-mode-v0.0.2.gz).
+Install the Super Dark Mode extension by clicking [here](https://secure.aha.io/settings/account/extensions/install?url=https%3A%2F%2Fgithub.com%2Fpercyhanna%2Fsuper-dark-mode%2Freleases%2Fdownload%2Fv0.0.3%2Fpercyhanna.super-dark-mode-v0.0.3.gz).
 
 ## Working on the extension
 
